@@ -146,7 +146,7 @@ scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
 best_val = math.inf
 epochs_no_improve = 0
 best_state = None
-train_losses, val_losses = [], []
+train_losses, val_losses, lrs = [], [], []
 
 # === Epoch Loop ==========================================================
 for epoch in range(1, MAX_EPOCHS + 1):
@@ -201,9 +201,10 @@ for epoch in range(1, MAX_EPOCHS + 1):
     scheduler.step(avg_val_loss)                       # 关键调用
     current_lr = optimizer.param_groups[0]['lr']       # 获取当前 lr
 
-    # ---------- 把本轮损失写入列表 ----------
+    # ---------- 把本轮损失及学习率写入列表 ----------
     train_losses.append(avg_train_loss)
     val_losses.append(avg_val_loss)
+    lrs.append(optimizer.param_groups[0]['lr'])
 
     # ---------------------------------------------------------------------
     # 4) 日志打印
@@ -231,6 +232,26 @@ for epoch in range(1, MAX_EPOCHS + 1):
 
 # 恢复最佳模型
 model.load_state_dict(best_state)
+# ---------- 保存最佳模型 ----------
+ckpt_path = 'best_cnn_lstm.pth'
+torch.save({
+    'state_dict': best_state,   # 网络参数
+    'feat_mean': feat_mean,     # 用于同尺度标准化
+    'feat_std':  feat_std,
+    'Y_mean':    Y_mean,
+    'Y_std':     Y_std,
+    'window':    WINDOW_SIZE,
+    'feature_cols': feature_cols,
+    'model_kwargs': {           # 供推理端重建模型
+        'input_dim': input_dim,
+        'conv_channels': 16,
+        'kernel': 3,
+        'lstm_hidden': 64,
+        'lstm_layers': 1,
+        'dropout': 0.2
+    }
+}, ckpt_path)
+print(f"Best model saved to {ckpt_path}")
 
 # ------------------ 11. 测试评估 ------------------
 model.eval()
@@ -255,9 +276,29 @@ result_df.to_csv('prediction_results.csv', index=False)
 print("Saved prediction_results.csv")
 
 # ------------------ 13. (可选) 损失曲线 ------------------
-plt.figure()
+'''plt.figure()
 plt.plot(train_losses, label='Train')
 plt.plot(val_losses,   label='Val')
 plt.xlabel('Epoch'); plt.ylabel('Huber Loss'); plt.legend()
 plt.tight_layout(); plt.savefig('loss_curve.png')
 print("Saved loss_curve.png")
+'''
+
+fig, ax1 = plt.subplots()
+
+# 左轴：损失曲线
+ax1.plot(train_losses, label='Train', color='tab:blue')
+ax1.plot(val_losses,   label='Val',   color='tab:orange')
+ax1.set_xlabel('Epoch')
+ax1.set_ylabel('Huber Loss')
+ax1.legend(loc='upper right')
+
+# 右轴：学习率曲线
+ax2 = ax1.twinx()
+ax2.plot(lrs, label='LR', color='tab:green', linestyle='--')
+ax2.set_ylabel('Learning Rate', color='tab:green')
+ax2.tick_params(axis='y', labelcolor='tab:green')
+
+fig.tight_layout()
+fig.savefig('loss_lr_curve.png', dpi=150)
+print("Saved loss_lr_curve.png")
