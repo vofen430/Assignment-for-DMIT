@@ -17,6 +17,18 @@ import torch.nn.functional as F
 from torch.utils.data import TensorDataset, DataLoader
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error
+import logging, sys, builtins
+
+# 1. 配置 root logger，输出到文件和 stdout
+logging.basicConfig(level=logging.INFO, format="%(message)s",
+                    handlers=[
+                        logging.FileHandler("run.log", encoding="utf-8"),
+                        logging.StreamHandler(sys.stdout)
+                    ])
+logger = logging.getLogger()
+
+# 2. 把内建 print 替换成 logger.info
+builtins.print = logger.info
 
 torch.manual_seed(42)
 np.random.seed(42)
