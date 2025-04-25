@@ -1,359 +1,1038 @@
-[001] Train 0.031170 | Val 0.026048 | lr 1.00e-03
-[002] Train 0.017666 | Val 0.019759 | lr 1.00e-03
-[003] Train 0.014968 | Val 0.013497 | lr 1.00e-03
-[004] Train 0.013211 | Val 0.010690 | lr 1.00e-03
-[005] Train 0.011793 | Val 0.006590 | lr 1.00e-03
-[006] Train 0.011091 | Val 0.007282 | lr 1.00e-03
-[007] Train 0.010116 | Val 0.006640 | lr 1.00e-03
-[008] Train 0.009479 | Val 0.006594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.009033 | Val 0.008200 | lr 5.00e-04
-[010] Train 0.008193 | Val 0.005315 | lr 5.00e-04
-[011] Train 0.007663 | Val 0.005914 | lr 5.00e-04
-[012] Train 0.007341 | Val 0.004937 | lr 5.00e-04
-[013] Train 0.007160 | Val 0.005962 | lr 5.00e-04
-[014] Train 0.007167 | Val 0.005315 | lr 5.00e-04
-[015] Train 0.006977 | Val 0.005348 | lr 5.00e-04
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 20
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033565 | Val 0.020836 | lr 1.00e-03
+[002] Train 0.016278 | Val 0.022461 | lr 1.00e-03
+[003] Train 0.013276 | Val 0.014622 | lr 1.00e-03
+[004] Train 0.011272 | Val 0.015558 | lr 1.00e-03
+[005] Train 0.010061 | Val 0.011390 | lr 1.00e-03
+[006] Train 0.009316 | Val 0.007939 | lr 1.00e-03
+[007] Train 0.008592 | Val 0.006588 | lr 1.00e-03
+[008] Train 0.007849 | Val 0.004872 | lr 1.00e-03
+[009] Train 0.007530 | Val 0.006144 | lr 1.00e-03
+[010] Train 0.007413 | Val 0.006868 | lr 1.00e-03
+[011] Train 0.007374 | Val 0.006810 | lr 1.00e-03
+Epoch    12: reducing learning rate of group 0 to 5.0000e-04.
+[012] Train 0.007285 | Val 0.005739 | lr 5.00e-04
+[013] Train 0.006700 | Val 0.007020 | lr 5.00e-04
+[014] Train 0.006715 | Val 0.006018 | lr 5.00e-04
+[015] Train 0.006627 | Val 0.005367 | lr 5.00e-04
 Epoch    16: reducing learning rate of group 0 to 2.5000e-04.
-[016] Train 0.006948 | Val 0.006122 | lr 2.50e-04
-[017] Train 0.006564 | Val 0.005310 | lr 2.50e-04
-[018] Train 0.006626 | Val 0.005615 | lr 2.50e-04
-[019] Train 0.006608 | Val 0.004571 | lr 2.50e-04
-[020] Train 0.006547 | Val 0.004268 | lr 2.50e-04
-[021] Train 0.006505 | Val 0.005275 | lr 2.50e-04
-[022] Train 0.006491 | Val 0.004913 | lr 2.50e-04
-[023] Train 0.006470 | Val 0.005526 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006413 | Val 0.004995 | lr 1.25e-04
-[025] Train 0.006270 | Val 0.005038 | lr 1.25e-04
-[026] Train 0.006269 | Val 0.004969 | lr 1.25e-04
-[027] Train 0.006219 | Val 0.004701 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006156 | Val 0.004870 | lr 6.25e-05
-[029] Train 0.006090 | Val 0.005046 | lr 6.25e-05
-[030] Train 0.006093 | Val 0.004948 | lr 6.25e-05
-[031] Train 0.006126 | Val 0.004920 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006066 | Val 0.005021 | lr 3.13e-05
-[033] Train 0.005980 | Val 0.004910 | lr 3.13e-05
-[034] Train 0.006093 | Val 0.004841 | lr 3.13e-05
-[035] Train 0.006044 | Val 0.005064 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
-Best model saved to best_pure_lstm.pth
-Test RMSE = 0.4514,  MAE = 0.3041
-Saved prediction_results.csv
-Saved loss_lr_curve.png[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+[016] Train 0.006636 | Val 0.006031 | lr 2.50e-04
+[017] Train 0.006335 | Val 0.005616 | lr 2.50e-04
+[018] Train 0.006378 | Val 0.005921 | lr 2.50e-04
+[019] Train 0.006246 | Val 0.006419 | lr 2.50e-04
+Epoch    20: reducing learning rate of group 0 to 1.2500e-04.
+[020] Train 0.006281 | Val 0.005597 | lr 1.25e-04
+[021] Train 0.006082 | Val 0.006522 | lr 1.25e-04
+[022] Train 0.006137 | Val 0.005714 | lr 1.25e-04
+[023] Train 0.006124 | Val 0.005230 | lr 1.25e-04
+⏹  Early‑Stopping after 23 epochs (no improve for 15).
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.3662,  MAE = 0.1789
 Saved prediction_results.csv
-Saved loss_lr_curve.png
-[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+Saved loss_lr_curve_CL_W={WINDOW_SIZE}.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 20
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.030574 | Val 0.020416 | lr 1.00e-03
+[002] Train 0.017578 | Val 0.022671 | lr 1.00e-03
+[003] Train 0.014807 | Val 0.016960 | lr 1.00e-03
+[004] Train 0.012941 | Val 0.010346 | lr 1.00e-03
+[005] Train 0.011380 | Val 0.010548 | lr 1.00e-03
+[006] Train 0.010580 | Val 0.009195 | lr 1.00e-03
+[007] Train 0.009853 | Val 0.006751 | lr 1.00e-03
+[008] Train 0.009286 | Val 0.005485 | lr 1.00e-03
+[009] Train 0.008847 | Val 0.005834 | lr 1.00e-03
+[010] Train 0.008071 | Val 0.006195 | lr 1.00e-03
+[011] Train 0.007707 | Val 0.007253 | lr 1.00e-03
+[012] Train 0.007590 | Val 0.004908 | lr 1.00e-03
+[013] Train 0.007384 | Val 0.006432 | lr 1.00e-03
+[014] Train 0.007285 | Val 0.005467 | lr 1.00e-03
+[015] Train 0.007163 | Val 0.004093 | lr 1.00e-03
+[016] Train 0.007195 | Val 0.006296 | lr 1.00e-03
+[017] Train 0.007003 | Val 0.005358 | lr 1.00e-03
+[018] Train 0.007136 | Val 0.005864 | lr 1.00e-03
+Epoch    19: reducing learning rate of group 0 to 5.0000e-04.
+[019] Train 0.006933 | Val 0.005796 | lr 5.00e-04
+[020] Train 0.006512 | Val 0.004426 | lr 5.00e-04
+[021] Train 0.006449 | Val 0.005356 | lr 5.00e-04
+[022] Train 0.006406 | Val 0.005480 | lr 5.00e-04
+Epoch    23: reducing learning rate of group 0 to 2.5000e-04.
+[023] Train 0.006394 | Val 0.004833 | lr 2.50e-04
+[024] Train 0.006120 | Val 0.004670 | lr 2.50e-04
+[025] Train 0.006107 | Val 0.004697 | lr 2.50e-04
+[026] Train 0.006082 | Val 0.005026 | lr 2.50e-04
+Epoch    27: reducing learning rate of group 0 to 1.2500e-04.
+[027] Train 0.006121 | Val 0.004974 | lr 1.25e-04
+[028] Train 0.005927 | Val 0.004725 | lr 1.25e-04
+[029] Train 0.005920 | Val 0.004908 | lr 1.25e-04
+[030] Train 0.005941 | Val 0.004984 | lr 1.25e-04
+⏹  Early‑Stopping after 30 epochs (no improve for 15).
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.3512,  MAE = 0.1902
 Saved prediction_results.csv
-Saved loss_lr_curve.png
-[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+Saved loss+lr curve to loss_lr_curve_PL_W=20.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033247 | Val 0.026750 | lr 1.00e-03
+[002] Train 0.016184 | Val 0.022084 | lr 1.00e-03
+[003] Train 0.013167 | Val 0.019669 | lr 1.00e-03
+[004] Train 0.011244 | Val 0.010137 | lr 1.00e-03
+[005] Train 0.009916 | Val 0.011836 | lr 1.00e-03
+[006] Train 0.009003 | Val 0.006666 | lr 1.00e-03
+[007] Train 0.008228 | Val 0.010986 | lr 1.00e-03
+[008] Train 0.007904 | Val 0.007806 | lr 1.00e-03
+[009] Train 0.007677 | Val 0.006908 | lr 1.00e-03
+[010] Train 0.007474 | Val 0.006154 | lr 1.00e-03
+[011] Train 0.007373 | Val 0.004209 | lr 1.00e-03
+[012] Train 0.007371 | Val 0.006147 | lr 1.00e-03
+[013] Train 0.007163 | Val 0.007004 | lr 1.00e-03
+[014] Train 0.007055 | Val 0.007969 | lr 1.00e-03
+Epoch    15: reducing learning rate of group 0 to 5.0000e-04.
+[015] Train 0.007144 | Val 0.005961 | lr 5.00e-04
+[016] Train 0.006545 | Val 0.005182 | lr 5.00e-04
+[017] Train 0.006528 | Val 0.006544 | lr 5.00e-04
+[018] Train 0.006571 | Val 0.005280 | lr 5.00e-04
+Epoch    19: reducing learning rate of group 0 to 2.5000e-04.
+[019] Train 0.006535 | Val 0.005724 | lr 2.50e-04
+[020] Train 0.006354 | Val 0.005118 | lr 2.50e-04
+[021] Train 0.006264 | Val 0.005515 | lr 2.50e-04
+[022] Train 0.006305 | Val 0.005317 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006221 | Val 0.005843 | lr 1.25e-04
+[024] Train 0.006051 | Val 0.005468 | lr 1.25e-04
+[025] Train 0.006107 | Val 0.005434 | lr 1.25e-04
+[026] Train 0.006020 | Val 0.005477 | lr 1.25e-04
+⏹  Early‑Stopping after 26 epochs (no improve for 15).
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.2984,  MAE = 0.1627
 Saved prediction_results.csv
-Saved loss_lr_curve.png
-[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+Saved loss+lr curve to loss_lr_curve_PL_W=120.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.030810 | Val 0.023406 | lr 1.00e-03
+[002] Train 0.017474 | Val 0.020159 | lr 1.00e-03
+[003] Train 0.014832 | Val 0.019318 | lr 1.00e-03
+[004] Train 0.012957 | Val 0.011504 | lr 1.00e-03
+[005] Train 0.011520 | Val 0.009545 | lr 1.00e-03
+[006] Train 0.010761 | Val 0.008219 | lr 1.00e-03
+[007] Train 0.010005 | Val 0.009438 | lr 1.00e-03
+[008] Train 0.009420 | Val 0.006684 | lr 1.00e-03
+[009] Train 0.008940 | Val 0.006079 | lr 1.00e-03
+[010] Train 0.008005 | Val 0.009048 | lr 1.00e-03
+[011] Train 0.007659 | Val 0.007842 | lr 1.00e-03
+[012] Train 0.007622 | Val 0.005450 | lr 1.00e-03
+[013] Train 0.007422 | Val 0.004682 | lr 1.00e-03
+[014] Train 0.007176 | Val 0.007323 | lr 1.00e-03
+[015] Train 0.007223 | Val 0.005801 | lr 1.00e-03
+[016] Train 0.007012 | Val 0.005526 | lr 1.00e-03
+Epoch    17: reducing learning rate of group 0 to 5.0000e-04.
+[017] Train 0.006961 | Val 0.005514 | lr 5.00e-04
+[018] Train 0.006530 | Val 0.006275 | lr 5.00e-04
+[019] Train 0.006506 | Val 0.006879 | lr 5.00e-04
+[020] Train 0.006535 | Val 0.006411 | lr 5.00e-04
+Epoch    21: reducing learning rate of group 0 to 2.5000e-04.
+[021] Train 0.006456 | Val 0.007056 | lr 2.50e-04
+[022] Train 0.006306 | Val 0.005834 | lr 2.50e-04
+[023] Train 0.006171 | Val 0.007328 | lr 2.50e-04
+[024] Train 0.006106 | Val 0.007027 | lr 2.50e-04
+Epoch    25: reducing learning rate of group 0 to 1.2500e-04.
+[025] Train 0.006114 | Val 0.006200 | lr 1.25e-04
+[026] Train 0.005958 | Val 0.006191 | lr 1.25e-04
+[027] Train 0.005933 | Val 0.006758 | lr 1.25e-04
+[028] Train 0.005961 | Val 0.006756 | lr 1.25e-04
+⏹  Early‑Stopping after 28 epochs (no improve for 15).
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.4071,  MAE = 0.2287
 Saved prediction_results.csv
-Saved loss_lr_curve.png
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+Saved loss+lr curve to loss_lr_curve_PL_W=120.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 288
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033847 | Val 0.025156 | lr 1.00e-03
+[002] Train 0.015865 | Val 0.019988 | lr 1.00e-03
+[003] Train 0.013170 | Val 0.017723 | lr 1.00e-03
+[004] Train 0.011291 | Val 0.014674 | lr 1.00e-03
+[005] Train 0.010154 | Val 0.009259 | lr 1.00e-03
+[006] Train 0.009007 | Val 0.007623 | lr 1.00e-03
+[007] Train 0.008317 | Val 0.006259 | lr 1.00e-03
+[008] Train 0.007925 | Val 0.009535 | lr 1.00e-03
+[009] Train 0.007630 | Val 0.009097 | lr 1.00e-03
+[010] Train 0.007596 | Val 0.006351 | lr 1.00e-03
+Epoch    11: reducing learning rate of group 0 to 5.0000e-04.
+[011] Train 0.007483 | Val 0.009191 | lr 5.00e-04
+[012] Train 0.007011 | Val 0.005781 | lr 5.00e-04
+[013] Train 0.007007 | Val 0.005669 | lr 5.00e-04
+[014] Train 0.006886 | Val 0.005256 | lr 5.00e-04
+[015] Train 0.006841 | Val 0.005366 | lr 5.00e-04
+[016] Train 0.006787 | Val 0.007060 | lr 5.00e-04
+[017] Train 0.006762 | Val 0.004610 | lr 5.00e-04
+[018] Train 0.006714 | Val 0.006837 | lr 5.00e-04
+[019] Train 0.006678 | Val 0.006312 | lr 5.00e-04
+[020] Train 0.006660 | Val 0.006851 | lr 5.00e-04
+Epoch    21: reducing learning rate of group 0 to 2.5000e-04.
+[021] Train 0.006528 | Val 0.004907 | lr 2.50e-04
+[022] Train 0.006400 | Val 0.005276 | lr 2.50e-04
+[023] Train 0.006340 | Val 0.005791 | lr 2.50e-04
+[024] Train 0.006382 | Val 0.005229 | lr 2.50e-04
+[025] Train 0.006268 | Val 0.004452 | lr 2.50e-04
+[026] Train 0.006309 | Val 0.005709 | lr 2.50e-04
+[027] Train 0.006228 | Val 0.005383 | lr 2.50e-04
+[028] Train 0.006170 | Val 0.004461 | lr 2.50e-04
+Epoch    29: reducing learning rate of group 0 to 1.2500e-04.
+[029] Train 0.006215 | Val 0.004511 | lr 1.25e-04
+[030] Train 0.006059 | Val 0.005029 | lr 1.25e-04
+[031] Train 0.006038 | Val 0.005293 | lr 1.25e-04
+[032] Train 0.006022 | Val 0.005984 | lr 1.25e-04
+Epoch    33: reducing learning rate of group 0 to 6.2500e-05.
+[033] Train 0.006035 | Val 0.005241 | lr 6.25e-05
+[034] Train 0.005930 | Val 0.005186 | lr 6.25e-05
+[035] Train 0.005973 | Val 0.005091 | lr 6.25e-05
+[036] Train 0.005928 | Val 0.004894 | lr 6.25e-05
+Epoch    37: reducing learning rate of group 0 to 3.1250e-05.
+[037] Train 0.005866 | Val 0.005225 | lr 3.13e-05
+[038] Train 0.005885 | Val 0.005318 | lr 3.13e-05
+[039] Train 0.005865 | Val 0.005552 | lr 3.13e-05
+[040] Train 0.005828 | Val 0.005266 | lr 3.13e-05
+⏹  Early‑Stopping after 40 epochs (no improve for 15).
+完整训练周期 耗时: 825.97s
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.4383,  MAE = 0.1920
 Saved prediction_results.csv
-Saved loss_lr_curve.png
-[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+Saved loss+lr curve to loss_lr_curve_PL_W=288.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 288
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.031008 | Val 0.019339 | lr 1.00e-03
+[002] Train 0.017486 | Val 0.016311 | lr 1.00e-03
+[003] Train 0.014718 | Val 0.011980 | lr 1.00e-03
+[004] Train 0.012848 | Val 0.010984 | lr 1.00e-03
+[005] Train 0.011677 | Val 0.006467 | lr 1.00e-03
+[006] Train 0.010675 | Val 0.007162 | lr 1.00e-03
+[007] Train 0.010070 | Val 0.005803 | lr 1.00e-03
+[008] Train 0.009399 | Val 0.007507 | lr 1.00e-03
+[009] Train 0.008733 | Val 0.010506 | lr 1.00e-03
+[010] Train 0.008076 | Val 0.005350 | lr 1.00e-03
+[011] Train 0.007758 | Val 0.006851 | lr 1.00e-03
+[012] Train 0.007637 | Val 0.005785 | lr 1.00e-03
+[013] Train 0.007538 | Val 0.005031 | lr 1.00e-03
+[014] Train 0.007494 | Val 0.006375 | lr 1.00e-03
+[015] Train 0.007236 | Val 0.006242 | lr 1.00e-03
+[016] Train 0.007141 | Val 0.006739 | lr 1.00e-03
+Epoch    17: reducing learning rate of group 0 to 5.0000e-04.
+[017] Train 0.007057 | Val 0.005186 | lr 5.00e-04
+[018] Train 0.006623 | Val 0.006661 | lr 5.00e-04
+[019] Train 0.006571 | Val 0.005847 | lr 5.00e-04
+[020] Train 0.006549 | Val 0.006663 | lr 5.00e-04
+Epoch    21: reducing learning rate of group 0 to 2.5000e-04.
+[021] Train 0.006401 | Val 0.005855 | lr 2.50e-04
+[022] Train 0.006268 | Val 0.006190 | lr 2.50e-04
+[023] Train 0.006219 | Val 0.006655 | lr 2.50e-04
+[024] Train 0.006210 | Val 0.006167 | lr 2.50e-04
+Epoch    25: reducing learning rate of group 0 to 1.2500e-04.
+[025] Train 0.006154 | Val 0.006427 | lr 1.25e-04
+[026] Train 0.006028 | Val 0.006934 | lr 1.25e-04
+[027] Train 0.005989 | Val 0.006691 | lr 1.25e-04
+[028] Train 0.005947 | Val 0.006346 | lr 1.25e-04
+⏹  Early‑Stopping after 28 epochs (no improve for 15).
+完整训练周期 耗时: 486.85s
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.4009,  MAE = 0.2043
 Saved prediction_results.csv
-Saved loss_lr_curve.png
-[001] Train 0.033959 | Val 0.017532 | lr 1.00e-03
-[002] Train 0.016457 | Val 0.024774 | lr 1.00e-03
-[003] Train 0.013397 | Val 0.020337 | lr 1.00e-03
-[004] Train 0.011720 | Val 0.009217 | lr 1.00e-03
-[005] Train 0.010429 | Val 0.006103 | lr 1.00e-03
-[006] Train 0.009806 | Val 0.013868 | lr 1.00e-03
-[007] Train 0.009043 | Val 0.008951 | lr 1.00e-03
-[008] Train 0.007997 | Val 0.007594 | lr 1.00e-03
-Epoch     9: reducing learning rate of group 0 to 5.0000e-04.
-[009] Train 0.007778 | Val 0.007681 | lr 5.00e-04
-[010] Train 0.007183 | Val 0.005694 | lr 5.00e-04
-[011] Train 0.007082 | Val 0.007696 | lr 5.00e-04
-[012] Train 0.007022 | Val 0.005975 | lr 5.00e-04
-[013] Train 0.006919 | Val 0.005737 | lr 5.00e-04
-[014] Train 0.006898 | Val 0.005500 | lr 5.00e-04
-[015] Train 0.006892 | Val 0.006289 | lr 5.00e-04
-[016] Train 0.006761 | Val 0.006387 | lr 5.00e-04
-[017] Train 0.006729 | Val 0.005629 | lr 5.00e-04
-Epoch    18: reducing learning rate of group 0 to 2.5000e-04.
-[018] Train 0.006751 | Val 0.005583 | lr 2.50e-04
-[019] Train 0.006537 | Val 0.005576 | lr 2.50e-04
-[020] Train 0.006437 | Val 0.004811 | lr 2.50e-04
-[021] Train 0.006381 | Val 0.005698 | lr 2.50e-04
-[022] Train 0.006391 | Val 0.005602 | lr 2.50e-04
-[023] Train 0.006346 | Val 0.005276 | lr 2.50e-04
-Epoch    24: reducing learning rate of group 0 to 1.2500e-04.
-[024] Train 0.006365 | Val 0.005662 | lr 1.25e-04
-[025] Train 0.006193 | Val 0.004876 | lr 1.25e-04
-[026] Train 0.006177 | Val 0.005454 | lr 1.25e-04
-[027] Train 0.006263 | Val 0.005290 | lr 1.25e-04
-Epoch    28: reducing learning rate of group 0 to 6.2500e-05.
-[028] Train 0.006153 | Val 0.005287 | lr 6.25e-05
-[029] Train 0.006068 | Val 0.004876 | lr 6.25e-05
-[030] Train 0.006068 | Val 0.005340 | lr 6.25e-05
-[031] Train 0.006131 | Val 0.005014 | lr 6.25e-05
-Epoch    32: reducing learning rate of group 0 to 3.1250e-05.
-[032] Train 0.006099 | Val 0.004982 | lr 3.13e-05
-[033] Train 0.006011 | Val 0.005135 | lr 3.13e-05
-[034] Train 0.006073 | Val 0.005197 | lr 3.13e-05
-[035] Train 0.006058 | Val 0.005107 | lr 3.13e-05
-⏹  Early‑Stopping after 35 epochs (no improve for 15).
+Saved loss+lr curve to loss_lr_curve_PL_W=288.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 144
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.034323 | Val 0.031497 | lr 1.00e-03
+[002] Train 0.016124 | Val 0.015916 | lr 1.00e-03
+[003] Train 0.012882 | Val 0.008213 | lr 1.00e-03
+[004] Train 0.011059 | Val 0.011159 | lr 1.00e-03
+[005] Train 0.009813 | Val 0.010622 | lr 1.00e-03
+[006] Train 0.008708 | Val 0.006748 | lr 1.00e-03
+[007] Train 0.008097 | Val 0.006907 | lr 1.00e-03
+[008] Train 0.007820 | Val 0.006229 | lr 1.00e-03
+[009] Train 0.007586 | Val 0.004387 | lr 1.00e-03
+[010] Train 0.007386 | Val 0.005002 | lr 1.00e-03
+[011] Train 0.007355 | Val 0.005325 | lr 1.00e-03
+[012] Train 0.007270 | Val 0.006718 | lr 1.00e-03
+Epoch    13: reducing learning rate of group 0 to 5.0000e-04.
+[013] Train 0.007223 | Val 0.005014 | lr 5.00e-04
+[014] Train 0.006744 | Val 0.004941 | lr 5.00e-04
+[015] Train 0.006680 | Val 0.004795 | lr 5.00e-04
+[016] Train 0.006579 | Val 0.005861 | lr 5.00e-04
+Epoch    17: reducing learning rate of group 0 to 2.5000e-04.
+[017] Train 0.006576 | Val 0.007442 | lr 2.50e-04
+[018] Train 0.006357 | Val 0.005647 | lr 2.50e-04
+[019] Train 0.006272 | Val 0.004316 | lr 2.50e-04
+[020] Train 0.006245 | Val 0.004478 | lr 2.50e-04
+[021] Train 0.006175 | Val 0.004378 | lr 2.50e-04
+[022] Train 0.006144 | Val 0.004388 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006209 | Val 0.005104 | lr 1.25e-04
+[024] Train 0.006094 | Val 0.004328 | lr 1.25e-04
+⏹  Early‑Stopping after 24 epochs (no improve for 15).
+完整训练周期 耗时: 312.12s
 Best model saved to best_cnn_lstm.pth
-Test RMSE = 0.3630,  MAE = 0.1939
+Test RMSE = 0.3796,  MAE = 0.1815
 Saved prediction_results.csv
-Saved loss_lr_curve.png
+Saved loss+lr curve to loss_lr_curve_PL_W=144.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 144
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.031318 | Val 0.027767 | lr 1.00e-03
+[002] Train 0.017568 | Val 0.016681 | lr 1.00e-03
+[003] Train 0.014577 | Val 0.008443 | lr 1.00e-03
+[004] Train 0.012804 | Val 0.007367 | lr 1.00e-03
+[005] Train 0.011574 | Val 0.011413 | lr 1.00e-03
+[006] Train 0.010701 | Val 0.007089 | lr 1.00e-03
+[007] Train 0.010135 | Val 0.008685 | lr 1.00e-03
+[008] Train 0.009488 | Val 0.006403 | lr 1.00e-03
+[009] Train 0.009067 | Val 0.007810 | lr 1.00e-03
+[010] Train 0.008198 | Val 0.005967 | lr 1.00e-03
+[011] Train 0.007755 | Val 0.005861 | lr 1.00e-03
+[012] Train 0.007652 | Val 0.006433 | lr 1.00e-03
+[013] Train 0.007517 | Val 0.005807 | lr 1.00e-03
+[014] Train 0.007365 | Val 0.006354 | lr 1.00e-03
+[015] Train 0.007317 | Val 0.006341 | lr 1.00e-03
+[016] Train 0.007112 | Val 0.006503 | lr 1.00e-03
+Epoch    17: reducing learning rate of group 0 to 5.0000e-04.
+[017] Train 0.007049 | Val 0.007907 | lr 5.00e-04
+[018] Train 0.006652 | Val 0.007777 | lr 5.00e-04
+[019] Train 0.006573 | Val 0.005996 | lr 5.00e-04
+[020] Train 0.006519 | Val 0.005803 | lr 5.00e-04
+[021] Train 0.006447 | Val 0.006198 | lr 5.00e-04
+[022] Train 0.006394 | Val 0.005766 | lr 5.00e-04
+[023] Train 0.006462 | Val 0.006337 | lr 5.00e-04
+[024] Train 0.006373 | Val 0.006305 | lr 5.00e-04
+[025] Train 0.006354 | Val 0.006804 | lr 5.00e-04
+Epoch    26: reducing learning rate of group 0 to 2.5000e-04.
+[026] Train 0.006305 | Val 0.009086 | lr 2.50e-04
+⏹  Early‑Stopping after 26 epochs (no improve for 15).
+完整训练周期 耗时: 329.57s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.5333,  MAE = 0.2894
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=144.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033247 | Val 0.026750 | lr 1.00e-03
+[002] Train 0.016184 | Val 0.022084 | lr 1.00e-03
+[003] Train 0.013167 | Val 0.019669 | lr 1.00e-03
+[004] Train 0.011244 | Val 0.010137 | lr 1.00e-03
+[005] Train 0.009916 | Val 0.011836 | lr 1.00e-03
+[006] Train 0.009003 | Val 0.006666 | lr 1.00e-03
+[007] Train 0.008228 | Val 0.010986 | lr 1.00e-03
+[008] Train 0.007904 | Val 0.007806 | lr 1.00e-03
+[009] Train 0.007677 | Val 0.006908 | lr 1.00e-03
+[010] Train 0.007474 | Val 0.006154 | lr 1.00e-03
+[011] Train 0.007373 | Val 0.004209 | lr 1.00e-03
+[012] Train 0.007371 | Val 0.006147 | lr 1.00e-03
+[013] Train 0.007163 | Val 0.007004 | lr 1.00e-03
+[014] Train 0.007055 | Val 0.007969 | lr 1.00e-03
+Epoch    15: reducing learning rate of group 0 to 5.0000e-04.
+[015] Train 0.007144 | Val 0.005961 | lr 5.00e-04
+[016] Train 0.006545 | Val 0.005182 | lr 5.00e-04
+[017] Train 0.006528 | Val 0.006544 | lr 5.00e-04
+[018] Train 0.006571 | Val 0.005280 | lr 5.00e-04
+Epoch    19: reducing learning rate of group 0 to 2.5000e-04.
+[019] Train 0.006535 | Val 0.005724 | lr 2.50e-04
+[020] Train 0.006354 | Val 0.005118 | lr 2.50e-04
+[021] Train 0.006264 | Val 0.005515 | lr 2.50e-04
+[022] Train 0.006305 | Val 0.005317 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006221 | Val 0.005843 | lr 1.25e-04
+[024] Train 0.006051 | Val 0.005468 | lr 1.25e-04
+[025] Train 0.006107 | Val 0.005434 | lr 1.25e-04
+[026] Train 0.006020 | Val 0.005477 | lr 1.25e-04
+⏹  Early‑Stopping after 26 epochs (no improve for 15).
+完整训练周期 耗时: 331.57s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.2984,  MAE = 0.1627
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=120.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.030810 | Val 0.023406 | lr 1.00e-03
+[002] Train 0.017474 | Val 0.020159 | lr 1.00e-03
+[003] Train 0.014832 | Val 0.019318 | lr 1.00e-03
+[004] Train 0.012957 | Val 0.011504 | lr 1.00e-03
+[005] Train 0.011520 | Val 0.009545 | lr 1.00e-03
+[006] Train 0.010761 | Val 0.008219 | lr 1.00e-03
+[007] Train 0.010005 | Val 0.009438 | lr 1.00e-03
+[008] Train 0.009420 | Val 0.006684 | lr 1.00e-03
+[009] Train 0.008940 | Val 0.006079 | lr 1.00e-03
+[010] Train 0.008005 | Val 0.009048 | lr 1.00e-03
+[011] Train 0.007659 | Val 0.007842 | lr 1.00e-03
+[012] Train 0.007622 | Val 0.005450 | lr 1.00e-03
+[013] Train 0.007422 | Val 0.004682 | lr 1.00e-03
+[014] Train 0.007176 | Val 0.007323 | lr 1.00e-03
+[015] Train 0.007223 | Val 0.005801 | lr 1.00e-03
+[016] Train 0.007012 | Val 0.005526 | lr 1.00e-03
+Epoch    17: reducing learning rate of group 0 to 5.0000e-04.
+[017] Train 0.006961 | Val 0.005514 | lr 5.00e-04
+[018] Train 0.006530 | Val 0.006275 | lr 5.00e-04
+[019] Train 0.006506 | Val 0.006879 | lr 5.00e-04
+[020] Train 0.006535 | Val 0.006411 | lr 5.00e-04
+Epoch    21: reducing learning rate of group 0 to 2.5000e-04.
+[021] Train 0.006456 | Val 0.007056 | lr 2.50e-04
+[022] Train 0.006306 | Val 0.005834 | lr 2.50e-04
+[023] Train 0.006171 | Val 0.007328 | lr 2.50e-04
+[024] Train 0.006106 | Val 0.007027 | lr 2.50e-04
+Epoch    25: reducing learning rate of group 0 to 1.2500e-04.
+[025] Train 0.006114 | Val 0.006200 | lr 1.25e-04
+[026] Train 0.005958 | Val 0.006191 | lr 1.25e-04
+[027] Train 0.005933 | Val 0.006758 | lr 1.25e-04
+[028] Train 0.005961 | Val 0.006756 | lr 1.25e-04
+⏹  Early‑Stopping after 28 epochs (no improve for 15).
+完整训练周期 耗时: 334.10s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.4071,  MAE = 0.2287
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=120.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 144
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.034323 | Val 0.031497 | lr 1.00e-03
+[002] Train 0.016124 | Val 0.015916 | lr 1.00e-03
+[003] Train 0.012882 | Val 0.008213 | lr 1.00e-03
+[004] Train 0.011059 | Val 0.011159 | lr 1.00e-03
+[005] Train 0.009813 | Val 0.010622 | lr 1.00e-03
+[006] Train 0.008708 | Val 0.006748 | lr 1.00e-03
+[007] Train 0.008097 | Val 0.006907 | lr 1.00e-03
+[008] Train 0.007820 | Val 0.006229 | lr 1.00e-03
+[009] Train 0.007586 | Val 0.004387 | lr 1.00e-03
+[010] Train 0.007386 | Val 0.005002 | lr 1.00e-03
+[011] Train 0.007355 | Val 0.005325 | lr 1.00e-03
+[012] Train 0.007270 | Val 0.006718 | lr 1.00e-03
+Epoch    13: reducing learning rate of group 0 to 5.0000e-04.
+[013] Train 0.007223 | Val 0.005014 | lr 5.00e-04
+[014] Train 0.006744 | Val 0.004941 | lr 5.00e-04
+[015] Train 0.006680 | Val 0.004795 | lr 5.00e-04
+[016] Train 0.006579 | Val 0.005861 | lr 5.00e-04
+Epoch    17: reducing learning rate of group 0 to 2.5000e-04.
+[017] Train 0.006576 | Val 0.007442 | lr 2.50e-04
+[018] Train 0.006357 | Val 0.005647 | lr 2.50e-04
+[019] Train 0.006272 | Val 0.004316 | lr 2.50e-04
+[020] Train 0.006245 | Val 0.004478 | lr 2.50e-04
+[021] Train 0.006175 | Val 0.004378 | lr 2.50e-04
+[022] Train 0.006144 | Val 0.004388 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006209 | Val 0.005104 | lr 1.25e-04
+[024] Train 0.006094 | Val 0.004328 | lr 1.25e-04
+⏹  Early‑Stopping after 24 epochs (no improve for 15).
+完整训练周期 耗时: 365.00s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.3796,  MAE = 0.1815
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=144.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 20
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033565 | Val 0.020836 | lr 1.00e-03
+[002] Train 0.016278 | Val 0.022461 | lr 1.00e-03
+[003] Train 0.013276 | Val 0.014622 | lr 1.00e-03
+[004] Train 0.011272 | Val 0.015558 | lr 1.00e-03
+[005] Train 0.010061 | Val 0.011390 | lr 1.00e-03
+[006] Train 0.009316 | Val 0.007939 | lr 1.00e-03
+[007] Train 0.008592 | Val 0.006588 | lr 1.00e-03
+[008] Train 0.007849 | Val 0.004872 | lr 1.00e-03
+[009] Train 0.007530 | Val 0.006144 | lr 1.00e-03
+[010] Train 0.007413 | Val 0.006868 | lr 1.00e-03
+[011] Train 0.007374 | Val 0.006810 | lr 1.00e-03
+Epoch    12: reducing learning rate of group 0 to 5.0000e-04.
+[012] Train 0.007285 | Val 0.005739 | lr 5.00e-04
+[013] Train 0.006700 | Val 0.007020 | lr 5.00e-04
+[014] Train 0.006715 | Val 0.006018 | lr 5.00e-04
+[015] Train 0.006627 | Val 0.005367 | lr 5.00e-04
+Epoch    16: reducing learning rate of group 0 to 2.5000e-04.
+[016] Train 0.006636 | Val 0.006031 | lr 2.50e-04
+[017] Train 0.006335 | Val 0.005616 | lr 2.50e-04
+[018] Train 0.006378 | Val 0.005921 | lr 2.50e-04
+[019] Train 0.006246 | Val 0.006419 | lr 2.50e-04
+Epoch    20: reducing learning rate of group 0 to 1.2500e-04.
+[020] Train 0.006281 | Val 0.005597 | lr 1.25e-04
+[021] Train 0.006082 | Val 0.006522 | lr 1.25e-04
+[022] Train 0.006137 | Val 0.005714 | lr 1.25e-04
+[023] Train 0.006124 | Val 0.005230 | lr 1.25e-04
+⏹  Early‑Stopping after 23 epochs (no improve for 15).
+完整训练周期 耗时: 205.08s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.3662,  MAE = 0.1789
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_cL_W=20.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 20
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.030574 | Val 0.020416 | lr 1.00e-03
+[002] Train 0.017578 | Val 0.022671 | lr 1.00e-03
+[003] Train 0.014807 | Val 0.016960 | lr 1.00e-03
+[004] Train 0.012941 | Val 0.010346 | lr 1.00e-03
+[005] Train 0.011380 | Val 0.010548 | lr 1.00e-03
+[006] Train 0.010580 | Val 0.009195 | lr 1.00e-03
+[007] Train 0.009853 | Val 0.006751 | lr 1.00e-03
+[008] Train 0.009286 | Val 0.005485 | lr 1.00e-03
+[009] Train 0.008847 | Val 0.005834 | lr 1.00e-03
+[010] Train 0.008071 | Val 0.006195 | lr 1.00e-03
+[011] Train 0.007707 | Val 0.007253 | lr 1.00e-03
+[012] Train 0.007590 | Val 0.004908 | lr 1.00e-03
+[013] Train 0.007384 | Val 0.006432 | lr 1.00e-03
+[014] Train 0.007285 | Val 0.005467 | lr 1.00e-03
+[015] Train 0.007163 | Val 0.004093 | lr 1.00e-03
+[016] Train 0.007195 | Val 0.006296 | lr 1.00e-03
+[017] Train 0.007003 | Val 0.005358 | lr 1.00e-03
+[018] Train 0.007136 | Val 0.005864 | lr 1.00e-03
+Epoch    19: reducing learning rate of group 0 to 5.0000e-04.
+[019] Train 0.006933 | Val 0.005796 | lr 5.00e-04
+[020] Train 0.006512 | Val 0.004426 | lr 5.00e-04
+[021] Train 0.006449 | Val 0.005356 | lr 5.00e-04
+[022] Train 0.006406 | Val 0.005480 | lr 5.00e-04
+Epoch    23: reducing learning rate of group 0 to 2.5000e-04.
+[023] Train 0.006394 | Val 0.004833 | lr 2.50e-04
+[024] Train 0.006120 | Val 0.004670 | lr 2.50e-04
+[025] Train 0.006107 | Val 0.004697 | lr 2.50e-04
+[026] Train 0.006082 | Val 0.005026 | lr 2.50e-04
+Epoch    27: reducing learning rate of group 0 to 1.2500e-04.
+[027] Train 0.006121 | Val 0.004974 | lr 1.25e-04
+[028] Train 0.005927 | Val 0.004725 | lr 1.25e-04
+[029] Train 0.005920 | Val 0.004908 | lr 1.25e-04
+[030] Train 0.005941 | Val 0.004984 | lr 1.25e-04
+⏹  Early‑Stopping after 30 epochs (no improve for 15).
+完整训练周期 耗时: 233.22s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.3512,  MAE = 0.1902
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=20.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033247 | Val 0.026750 | lr 1.00e-03
+[002] Train 0.016184 | Val 0.022084 | lr 1.00e-03
+[003] Train 0.013167 | Val 0.019669 | lr 1.00e-03
+[004] Train 0.011244 | Val 0.010137 | lr 1.00e-03
+[005] Train 0.009916 | Val 0.011836 | lr 1.00e-03
+[006] Train 0.009003 | Val 0.006666 | lr 1.00e-03
+[007] Train 0.008228 | Val 0.010986 | lr 1.00e-03
+[008] Train 0.007904 | Val 0.007806 | lr 1.00e-03
+[009] Train 0.007677 | Val 0.006908 | lr 1.00e-03
+[010] Train 0.007474 | Val 0.006154 | lr 1.00e-03
+[011] Train 0.007373 | Val 0.004209 | lr 1.00e-03
+[012] Train 0.007371 | Val 0.006147 | lr 1.00e-03
+[013] Train 0.007163 | Val 0.007004 | lr 1.00e-03
+[014] Train 0.007055 | Val 0.007969 | lr 1.00e-03
+Epoch    15: reducing learning rate of group 0 to 5.0000e-04.
+[015] Train 0.007144 | Val 0.005961 | lr 5.00e-04
+[016] Train 0.006545 | Val 0.005182 | lr 5.00e-04
+[017] Train 0.006528 | Val 0.006544 | lr 5.00e-04
+[018] Train 0.006571 | Val 0.005280 | lr 5.00e-04
+Epoch    19: reducing learning rate of group 0 to 2.5000e-04.
+[019] Train 0.006535 | Val 0.005724 | lr 2.50e-04
+[020] Train 0.006354 | Val 0.005118 | lr 2.50e-04
+[021] Train 0.006264 | Val 0.005515 | lr 2.50e-04
+[022] Train 0.006305 | Val 0.005317 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006221 | Val 0.005843 | lr 1.25e-04
+[024] Train 0.006051 | Val 0.005468 | lr 1.25e-04
+[025] Train 0.006107 | Val 0.005434 | lr 1.25e-04
+[026] Train 0.006020 | Val 0.005477 | lr 1.25e-04
+⏹  Early‑Stopping after 26 epochs (no improve for 15).
+完整训练周期 耗时: 338.59s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.2984,  MAE = 0.1627
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_cL_W=120.png
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.030810 | Val 0.023406 | lr 1.00e-03
+[002] Train 0.017474 | Val 0.020159 | lr 1.00e-03
+[003] Train 0.014832 | Val 0.019318 | lr 1.00e-03
+[004] Train 0.012957 | Val 0.011504 | lr 1.00e-03
+[005] Train 0.011520 | Val 0.009545 | lr 1.00e-03
+[006] Train 0.010761 | Val 0.008219 | lr 1.00e-03
+[007] Train 0.010005 | Val 0.009438 | lr 1.00e-03
+[008] Train 0.009420 | Val 0.006684 | lr 1.00e-03
+[009] Train 0.008940 | Val 0.006079 | lr 1.00e-03
+[010] Train 0.008005 | Val 0.009048 | lr 1.00e-03
+[011] Train 0.007659 | Val 0.007842 | lr 1.00e-03
+[012] Train 0.007622 | Val 0.005450 | lr 1.00e-03
+[013] Train 0.007422 | Val 0.004682 | lr 1.00e-03
+[014] Train 0.007176 | Val 0.007323 | lr 1.00e-03
+[015] Train 0.007223 | Val 0.005801 | lr 1.00e-03
+[016] Train 0.007012 | Val 0.005526 | lr 1.00e-03
+Epoch    17: reducing learning rate of group 0 to 5.0000e-04.
+[017] Train 0.006961 | Val 0.005514 | lr 5.00e-04
+[018] Train 0.006530 | Val 0.006275 | lr 5.00e-04
+[019] Train 0.006506 | Val 0.006879 | lr 5.00e-04
+[020] Train 0.006535 | Val 0.006411 | lr 5.00e-04
+Epoch    21: reducing learning rate of group 0 to 2.5000e-04.
+[021] Train 0.006456 | Val 0.007056 | lr 2.50e-04
+[022] Train 0.006306 | Val 0.005834 | lr 2.50e-04
+[023] Train 0.006171 | Val 0.007328 | lr 2.50e-04
+[024] Train 0.006106 | Val 0.007027 | lr 2.50e-04
+Epoch    25: reducing learning rate of group 0 to 1.2500e-04.
+[025] Train 0.006114 | Val 0.006200 | lr 1.25e-04
+[026] Train 0.005958 | Val 0.006191 | lr 1.25e-04
+[027] Train 0.005933 | Val 0.006758 | lr 1.25e-04
+[028] Train 0.005961 | Val 0.006756 | lr 1.25e-04
+⏹  Early‑Stopping after 28 epochs (no improve for 15).
+完整训练周期 耗时: 334.10s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.4071,  MAE = 0.2287
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=120.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 144
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.034323 | Val 0.031497 | lr 1.00e-03
+[002] Train 0.016124 | Val 0.015916 | lr 1.00e-03
+[003] Train 0.012882 | Val 0.008213 | lr 1.00e-03
+[004] Train 0.011059 | Val 0.011159 | lr 1.00e-03
+[005] Train 0.009813 | Val 0.010622 | lr 1.00e-03
+[006] Train 0.008708 | Val 0.006748 | lr 1.00e-03
+[007] Train 0.008097 | Val 0.006907 | lr 1.00e-03
+[008] Train 0.007820 | Val 0.006229 | lr 1.00e-03
+[009] Train 0.007586 | Val 0.004387 | lr 1.00e-03
+[010] Train 0.007386 | Val 0.005002 | lr 1.00e-03
+[011] Train 0.007355 | Val 0.005325 | lr 1.00e-03
+[012] Train 0.007270 | Val 0.006718 | lr 1.00e-03
+Epoch    13: reducing learning rate of group 0 to 5.0000e-04.
+[013] Train 0.007223 | Val 0.005014 | lr 5.00e-04
+[014] Train 0.006744 | Val 0.004941 | lr 5.00e-04
+[015] Train 0.006680 | Val 0.004795 | lr 5.00e-04
+[016] Train 0.006579 | Val 0.005861 | lr 5.00e-04
+Epoch    17: reducing learning rate of group 0 to 2.5000e-04.
+[017] Train 0.006576 | Val 0.007442 | lr 2.50e-04
+[018] Train 0.006357 | Val 0.005647 | lr 2.50e-04
+[019] Train 0.006272 | Val 0.004316 | lr 2.50e-04
+[020] Train 0.006245 | Val 0.004478 | lr 2.50e-04
+[021] Train 0.006175 | Val 0.004378 | lr 2.50e-04
+[022] Train 0.006144 | Val 0.004388 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006209 | Val 0.005104 | lr 1.25e-04
+[024] Train 0.006094 | Val 0.004328 | lr 1.25e-04
+⏹  Early‑Stopping after 24 epochs (no improve for 15).
+完整训练周期 耗时: 321.85s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.3796,  MAE = 0.1815
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_cL_W=144.png
+
+
+==========  PL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 144
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.031318 | Val 0.027767 | lr 1.00e-03
+[002] Train 0.017568 | Val 0.016681 | lr 1.00e-03
+[003] Train 0.014577 | Val 0.008443 | lr 1.00e-03
+[004] Train 0.012804 | Val 0.007367 | lr 1.00e-03
+[005] Train 0.011574 | Val 0.011413 | lr 1.00e-03
+[006] Train 0.010701 | Val 0.007089 | lr 1.00e-03
+[007] Train 0.010135 | Val 0.008685 | lr 1.00e-03
+[008] Train 0.009488 | Val 0.006403 | lr 1.00e-03
+[009] Train 0.009067 | Val 0.007810 | lr 1.00e-03
+[010] Train 0.008198 | Val 0.005967 | lr 1.00e-03
+[011] Train 0.007755 | Val 0.005861 | lr 1.00e-03
+[012] Train 0.007652 | Val 0.006433 | lr 1.00e-03
+[013] Train 0.007517 | Val 0.005807 | lr 1.00e-03
+[014] Train 0.007365 | Val 0.006354 | lr 1.00e-03
+[015] Train 0.007317 | Val 0.006341 | lr 1.00e-03
+[016] Train 0.007112 | Val 0.006503 | lr 1.00e-03
+Epoch    17: reducing learning rate of group 0 to 5.0000e-04.
+[017] Train 0.007049 | Val 0.007907 | lr 5.00e-04
+[018] Train 0.006652 | Val 0.007777 | lr 5.00e-04
+[019] Train 0.006573 | Val 0.005996 | lr 5.00e-04
+[020] Train 0.006519 | Val 0.005803 | lr 5.00e-04
+[021] Train 0.006447 | Val 0.006198 | lr 5.00e-04
+[022] Train 0.006394 | Val 0.005766 | lr 5.00e-04
+[023] Train 0.006462 | Val 0.006337 | lr 5.00e-04
+[024] Train 0.006373 | Val 0.006305 | lr 5.00e-04
+[025] Train 0.006354 | Val 0.006804 | lr 5.00e-04
+Epoch    26: reducing learning rate of group 0 to 2.5000e-04.
+[026] Train 0.006305 | Val 0.009086 | lr 2.50e-04
+⏹  Early‑Stopping after 26 epochs (no improve for 15).
+完整训练周期 耗时: 329.57s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.5333,  MAE = 0.2894
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_PL_W=144.png
+
+==========  CL  ==========
+
+==========  RUN CONFIG  ==========
+FILE_PATH      = 2.1 training data.xlsx
+WINDOW_SIZE    = 120
+TRAIN_RATIO    = 0.70
+VAL_RATIO      = 0.15
+BATCH_SIZE     = 64
+MAX_EPOCHS     = 100
+PATIENCE       = 15
+LR             = 0.001
+DELTA_HUBER    = 1.0
+DEVICE         = cuda
+
+-- LR Scheduler (ReduceLROnPlateau) --
+  factor       = 0.5
+  patience     = 3
+  threshold    = 0.0001
+  min_lr       = 1e-05
+=====================================
+[001] Train 0.033247 | Val 0.026750 | lr 1.00e-03
+[002] Train 0.016184 | Val 0.022084 | lr 1.00e-03
+[003] Train 0.013167 | Val 0.019669 | lr 1.00e-03
+[004] Train 0.011244 | Val 0.010137 | lr 1.00e-03
+[005] Train 0.009916 | Val 0.011836 | lr 1.00e-03
+[006] Train 0.009003 | Val 0.006666 | lr 1.00e-03
+[007] Train 0.008228 | Val 0.010986 | lr 1.00e-03
+[008] Train 0.007904 | Val 0.007806 | lr 1.00e-03
+[009] Train 0.007677 | Val 0.006908 | lr 1.00e-03
+[010] Train 0.007474 | Val 0.006154 | lr 1.00e-03
+[011] Train 0.007373 | Val 0.004209 | lr 1.00e-03
+[012] Train 0.007371 | Val 0.006147 | lr 1.00e-03
+[013] Train 0.007163 | Val 0.007004 | lr 1.00e-03
+[014] Train 0.007055 | Val 0.007969 | lr 1.00e-03
+Epoch    15: reducing learning rate of group 0 to 5.0000e-04.
+[015] Train 0.007144 | Val 0.005961 | lr 5.00e-04
+[016] Train 0.006545 | Val 0.005182 | lr 5.00e-04
+[017] Train 0.006528 | Val 0.006544 | lr 5.00e-04
+[018] Train 0.006571 | Val 0.005280 | lr 5.00e-04
+Epoch    19: reducing learning rate of group 0 to 2.5000e-04.
+[019] Train 0.006535 | Val 0.005724 | lr 2.50e-04
+[020] Train 0.006354 | Val 0.005118 | lr 2.50e-04
+[021] Train 0.006264 | Val 0.005515 | lr 2.50e-04
+[022] Train 0.006305 | Val 0.005317 | lr 2.50e-04
+Epoch    23: reducing learning rate of group 0 to 1.2500e-04.
+[023] Train 0.006221 | Val 0.005843 | lr 1.25e-04
+[024] Train 0.006051 | Val 0.005468 | lr 1.25e-04
+[025] Train 0.006107 | Val 0.005434 | lr 1.25e-04
+[026] Train 0.006020 | Val 0.005477 | lr 1.25e-04
+⏹  Early‑Stopping after 26 epochs (no improve for 15).
+完整训练周期 耗时: 373.18s
+Best model saved to best_cnn_lstm.pth
+Test RMSE = 0.2984,  MAE = 0.1627
+Saved prediction_results.csv
+Saved loss+lr curve to loss_lr_curve_cL_W=120.png

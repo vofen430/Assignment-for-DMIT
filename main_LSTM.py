@@ -15,8 +15,21 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import TensorDataset, DataLoader
 import matplotlib.pyplot as plt
+import random, numpy as np, torch
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import logging, sys, builtins
+import time
+
+# 取消随机性
+
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+torch.cuda.manual_seed_all(SEED)
+
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
 
 # 1. 配置 root logger，输出到文件和 stdout
 logging.basicConfig(level=logging.INFO, format="%(message)s",
@@ -34,7 +47,7 @@ np.random.seed(42)
 
 # ------------------ 1. 配置参数 ------------------
 FILE_PATH      = '2.1 training data.xlsx'   # 原始数据
-WINDOW_SIZE    = 20                         # 序列长度
+WINDOW_SIZE    = 144                        # 序列长度
 TRAIN_RATIO    = 0.70                       # 70 % train
 VAL_RATIO      = 0.15                       # 15 % val，剩余 test
 BATCH_SIZE     = 64
@@ -43,6 +56,22 @@ PATIENCE       = 15                         # Early stopping
 LR             = 1e-3
 DELTA_HUBER    = 1.0                        # Huber δ
 DEVICE         = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# === 超参数与环境信息 ==========================================
+print("""
+==========  PL  ==========
+""")
+print("==========  RUN CONFIG  ==========")
+print(f"FILE_PATH      = {FILE_PATH}")
+print(f"WINDOW_SIZE    = {WINDOW_SIZE}")
+print(f"TRAIN_RATIO    = {TRAIN_RATIO:.2f}")
+print(f"VAL_RATIO      = {VAL_RATIO:.2f}")
+print(f"BATCH_SIZE     = {BATCH_SIZE}")
+print(f"MAX_EPOCHS     = {MAX_EPOCHS}")
+print(f"PATIENCE       = {PATIENCE}")
+print(f"LR             = {LR}")
+print(f"DELTA_HUBER    = {DELTA_HUBER}")
+print(f"DEVICE         = {DEVICE}")
 
 # ------------------ 2. 数据读取 ------------------
 df = pd.read_excel(FILE_PATH)
@@ -109,9 +138,22 @@ X_val,   y_val   = create_sequences(val_df,   WINDOW_SIZE)
 X_test,  y_test  = create_sequences(test_df,  WINDOW_SIZE)
 
 # ------------------ 7. DataLoader ------------------
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    random.seed(worker_seed)
+    np.random.seed(worker_seed)
+
+g = torch.Generator()
+g.manual_seed(SEED)
+
 def to_loader(X, y, shuffle=False):
     ds = TensorDataset(torch.tensor(X), torch.tensor(y).unsqueeze(1))
-    return DataLoader(ds, batch_size=BATCH_SIZE, shuffle=shuffle, drop_last=False)
+    return DataLoader(ds, batch_size=BATCH_SIZE, 
+                      shuffle=shuffle, 
+                      drop_last=False, 
+                      num_workers=4,              # 根据机器情况调整
+                      worker_init_fn=seed_worker, # 固定每个 worker 的 seed
+                      generator=g if shuffle else None)
 
 train_loader = to_loader(X_train, y_train, shuffle=True)  # 不打乱
 val_loader   = to_loader(X_val,   y_val,   shuffle=False)
@@ -148,6 +190,12 @@ scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
     min_lr=1e-5,       # 学习率下限
     verbose=True       # 触发时自动打印 lr 变化
 )
+print("\n-- LR Scheduler (ReduceLROnPlateau) --")
+print(f"  factor       = {scheduler.factor}")
+print(f"  patience     = {scheduler.patience}")
+print(f"  threshold    = {scheduler.threshold}")
+print(f"  min_lr       = {scheduler.min_lrs[0]}")
+print("=====================================")
 
 # ------------------ 10. 训练循环 ------------------
 best_val = math.inf
@@ -155,7 +203,20 @@ epochs_no_improve = 0
 best_state = None
 train_losses, val_losses, lrs = [], [], []
 
+# 记录训练耗时
+def log_time(start: float = None, msg: str = "") -> float:
+    """
+    如果提供了 start（上一次时间戳），则打印从 start 到现在的耗时，并返回当前时间戳；
+    如果不提供 start，则仅返回当前时间戳，不打印。
+    """
+    now = time.time()
+    if start is not None:
+        elapsed = now - start
+        print(f"{msg} 耗时: {elapsed:.2f}s")
+    return now
+
 # === Epoch Loop ==========================================================
+start = log_time(msg=None)
 for epoch in range(1, MAX_EPOCHS + 1):
     # ---------------------------------------------------------------------
     # 1) 训练阶段
@@ -234,6 +295,7 @@ for epoch in range(1, MAX_EPOCHS + 1):
             print(f"⏹  Early‑Stopping after {epoch} epochs "
                   f"(no improve for {PATIENCE}).")
             break
+start = log_time(start, msg="完整训练周期")
 # =========================================================================
 # 训练循环结束
 
@@ -307,5 +369,6 @@ ax2.set_ylabel('Learning Rate', color='tab:green')
 ax2.tick_params(axis='y', labelcolor='tab:green')
 
 fig.tight_layout()
-fig.savefig('loss_lr_curve.png', dpi=150)
-print("Saved loss_lr_curve.png")
+output_path = f"loss_lr_curve_PL_W={WINDOW_SIZE}.png"
+fig.savefig(output_path, dpi=150)
+print(f"Saved loss+lr curve to {output_path}")
